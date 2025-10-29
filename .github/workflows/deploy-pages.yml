@@ -7,55 +7,84 @@ on:
 
 permissions:
   contents: read
-  actions: read
 
 jobs:
   deploy-westover-dev:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.dev/')
-    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
-    with:
-      project-name: westoverdev
-      directory: westover.dev
-    secrets:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, app-server]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install wrangler if needed
+        run: |
+          if ! command -v wrangler &> /dev/null; then
+            npm install -g wrangler
+          fi
+      - name: Deploy westover.dev
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy westover.dev --project-name=westoverdev --branch=main
 
   deploy-westover-expert:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.expert/')
-    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
-    with:
-      project-name: westover-expert
-      directory: westover.expert
-    secrets:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, app-server]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install wrangler if needed
+        run: |
+          if ! command -v wrangler &> /dev/null; then
+            npm install -g wrangler
+          fi
+      - name: Deploy westover.expert
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy westover.expert --project-name=westover-expert --branch=main
 
   deploy-westover-services:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.services/')
-    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
-    with:
-      project-name: westover-services
-      directory: westover.services
-    secrets:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, app-server]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install wrangler if needed
+        run: |
+          if ! command -v wrangler &> /dev/null; then
+            npm install -g wrangler
+          fi
+      - name: Deploy westover.services
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy westover.services --project-name=westover-services --branch=main
 
   deploy-westover-lol:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.lol/')
-    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
-    with:
-      project-name: westover-lol
-      directory: westover.lol
-    secrets:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, app-server]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install wrangler if needed
+        run: |
+          if ! command -v wrangler &> /dev/null; then
+            npm install -g wrangler
+          fi
+      - name: Deploy westover.lol
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy westover.lol --project-name=westover-lol --branch=main
 
   deploy-resume-westover-dev:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'resume.westover.dev/')
-    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
-    with:
-      project-name: resume-westover-dev
-      directory: resume.westover.dev
-    secrets:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    runs-on: [self-hosted, app-server]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install wrangler if needed
+        run: |
+          if ! command -v wrangler &> /dev/null; then
+            npm install -g wrangler
+          fi
+      - name: Deploy resume.westover.dev
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy resume.westover.dev --project-name=resume-westover-dev --branch=main
