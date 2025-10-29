@@ -1,0 +1,57 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-westover-dev:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.dev/')
+    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
+    with:
+      project-name: westover-dev
+      directory: westover.dev
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  deploy-westover-expert:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.expert/')
+    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
+    with:
+      project-name: westover-expert
+      directory: westover.expert
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  deploy-westover-services:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.services/')
+    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
+    with:
+      project-name: westover-services
+      directory: westover.services
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  deploy-westover-lol:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.lol/')
+    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
+    with:
+      project-name: westover-lol
+      directory: westover.lol
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  deploy-resume-westover-dev:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'resume.westover.dev/')
+    uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
+    with:
+      project-name: resume-westover-dev
+      directory: resume.westover.dev
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
