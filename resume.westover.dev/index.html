@@ -4,9 +4,68 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>James Westover's Resume</title>
+	<style>
+		body {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 20px;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+			line-height: 1.6;
+		}
+		.pdf-button {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			padding: 12px 24px;
+			background: #0066cc;
+			color: white;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 600;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+			z-index: 1000;
+			transition: all 0.2s;
+		}
+		.pdf-button:hover {
+			background: #0052a3;
+			transform: translateY(-1px);
+			box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+		}
+		.pdf-button:active {
+			transform: translateY(0);
+		}
+		@media (max-width: 768px) {
+			body {
+				padding: 60px 16px 16px;
+			}
+			.pdf-button {
+				top: 10px;
+				right: 10px;
+				left: 10px;
+				width: calc(100% - 20px);
+				padding: 14px 20px;
+				font-size: 15px;
+			}
+		}
+		@media print {
+			.pdf-button {
+				display: none;
+			}
+			body {
+				max-width: 100%;
+				padding: 0;
+			}
+			@page {
+				margin: 1in;
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<button class="pdf-button" onclick="window.print()">📄 Download PDF</button>
 	<hr>
 	<h1>James Westover</h1>
 	<ul>
@@ -14,11 +73,8 @@
 		<li><strong>GitHub:</strong> <a href="https://www.github.com/jameswestover">@westover</a></li>
 		<li><strong>Scite:</strong> <a href="https://scite.ai/authors/james-westover-b8EkbR">Author Page</a></li>
 		<li><strong>Portfolio:</strong> <a href="https://westover.dev">westover.dev</a></li>
-		<li><strong>Consulting:</strong> <a href="https://westover.expert">westover.expert</a> | <a href="https://westover.services">westover.services</a></li>
+		<li><strong>Consulting:</strong> <a href="https://westover.expert">westover.expert</a></li>
 		<li><strong>Developer Tools:</strong> <a href="https://breadfactory.app">breadfactory.app</a></li>
-		<li><strong>Address:</strong> <a
-				href="https://maps.apple.com/?address=270,Cloverbrook+Cir,Pittsburg,California">270 Cloverbrook Cir,
-				Pittsburg, CA 94565, United States</a></li>
 		<li><strong>Email:</strong> <a href="mailto:james@westover.dev">james@westover.dev</a></li>
 		<li><strong>Phone:</strong> <a href="tel:+1-510-207-8194">+1-510-207-8194</a></li>
 	</ul>
