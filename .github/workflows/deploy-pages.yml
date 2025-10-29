@@ -10,7 +10,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.dev/')
     uses: neherdata/nds_server/.github/workflows/reusable-pages-deploy.yml@main
     with:
-      project-name: westover-dev
+      project-name: westoverdev
       directory: westover.dev
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
