@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   deploy-westover-dev:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.modified, 'westover.dev/')
