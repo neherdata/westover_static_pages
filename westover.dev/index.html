@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Westover - Systems Architect | AI-Augmented Development Leader</title>
+    <meta name="description" content="Leading virtual development teams powered by Claude automation. Building production systems with AI as a force multiplier, privacy-first home infrastructure, and cost-effective hosting.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #1a1f3a;
+            --accent: #00d4ff;
+            --accent-dim: #0099cc;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border: #27273f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 4rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero {
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .cta-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-label {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-desc ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .project-desc li {
+            margin: 0.5rem 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-primary);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .philosophy-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .philosophy-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .link-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .link-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .link-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .link-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="font-size: 1.25rem; font-weight: 700;">James Westover</div>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="https://resume.westover.dev" style="color: var(--text-secondary); text-decoration: none;">Resume</a>
+                    <a href="https://westover.expert" style="color: var(--accent); text-decoration: none;">Consulting</a>
+                    <a href="https://breadfactory.app" style="color: var(--text-secondary); text-decoration: none;">Dev Tools</a>
+                    <a href="#contact" style="color: var(--text-secondary); text-decoration: none;">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>James Westover</h1>
+                <p class="subtitle">Systems Architect | AI-Augmented Development Leader</p>
+                <p class="tagline">
+                    Leveraging AI as a force multiplier to build production systems faster.
+                    Leading virtual development teams powered by Claude automation.
+                </p>
+                <div class="cta-links">
+                    <a href="https://resume.westover.dev" class="btn btn-primary">View Resume</a>
+                    <a href="https://westover.expert" class="btn btn-secondary">Consulting Services</a>
+                    <a href="https://breadfactory.app" class="btn btn-secondary">Developer Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8; max-width: 800px;">
+                    Background in distributed systems, autonomous driving, and mapping platforms at scale (Uber, HERE Technologies).
+                    Transitioned to <strong style="color: var(--text-primary);">AI-augmented development methodology</strong>,
+                    demonstrating how AI can multiply individual productivity to team-level output.
+                </p>
+                <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8; max-width: 800px; margin-top: 1rem;">
+                    Current focus: <strong style="color: var(--accent);">Enabling developers to build at home without cloud vendor lock-in.</strong>
+                    Privacy-first architecture, cost-effective home hosting, and production-grade reliability using open-source tools.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Claude Automation & Virtual Dev Team</h3>
+                        <div class="project-label">nds_server - AI Development Infrastructure</div>
+                        <p class="project-desc">
+                            Leading AI agents as Head of Engineering in a novel development paradigm:
+                            <ul>
+                                <li>Rapid full-stack development (React Native, FastAPI, ONNX)</li>
+                                <li>AI-orchestrated virtual development team</li>
+                                <li>Demonstrating force multiplier effect of Claude automation</li>
+                                <li>Autonomous planning, execution, and deployment workflows</li>
+                            </ul>
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Claude AI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">ONNX Runtime</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Ghost Hunter iOS App</h3>
+                        <div class="project-label">Live on Apple App Store</div>
+                        <p class="project-desc">
+                            Subscription-based AR paranormal investigation game showcasing modern mobile development:
+                            <ul>
+                                <li>Open-source ML models via ONNX Runtime</li>
+                                <li>Cost-optimized FastAPI inference backend</li>
+                                <li>Home-hosted infrastructure (Cloudflare, Tailscale, Ansible)</li>
+                                <li>Complete CI/CD with GitHub Actions and EAS Build</li>
+                            </ul>
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">ARKit</span>
+                            <span class="tech-tag">ONNX</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Breadfactory.app</h3>
+                        <div class="project-label">Developer Tools Platform</div>
+                        <p class="project-desc">
+                            Empowering at-home developers with tools and education:
+                            <ul>
+                                <li>Privacy-first development practices</li>
+                                <li>No vendor lock-in or metered cloud costs</li>
+                                <li>Cost-effective home hosting patterns</li>
+                                <li>Tools for escaping expensive cloud dependencies</li>
+                            </ul>
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Cloudflare</span>
+                            <span class="tech-tag">Tailscale</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">Open Source</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="section">
+            <div class="container">
+                <h2 class="section-title">Philosophy</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                        <h4>Privacy-First Development</h4>
+                        <p>Build systems that respect user privacy by design, not as an afterthought</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Cost Transparency</h4>
+                        <p>Full control over infrastructure costs without metered cloud surprises</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Freedom from Lock-In</h4>
+                        <p>Escape vendor dependencies and metered cloud services</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Production-Grade at Home</h4>
+                        <p>Reliable, scalable systems hosted on your own infrastructure</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>AI Force Multiplier</h4>
+                        <p>Leverage AI to amplify development velocity, not replace developers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="links" class="section">
+            <div class="container">
+                <h2 class="section-title">Links</h2>
+                <div class="links-grid">
+                    <a href="https://resume.westover.dev" class="link-card">
+                        <h4>Resume</h4>
+                        <p>Complete professional background</p>
+                    </a>
+                    <a href="https://westover.expert" class="link-card">
+                        <h4>Consulting</h4>
+                        <p>Professional services & expertise</p>
+                    </a>
+                    <a href="https://westover.services" class="link-card">
+                        <h4>Internal Tools</h4>
+                        <p>Personal tool portal & dashboard</p>
+                    </a>
+                    <a href="https://breadfactory.app" class="link-card">
+                        <h4>Developer Tools</h4>
+                        <p>Home hosting platform</p>
+                    </a>
+                    <a href="https://github.com/neherdata" class="link-card">
+                        <h4>GitHub</h4>
+                        <p>Open source projects</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jameswwestover/" class="link-card">
+                        <h4>LinkedIn</h4>
+                        <p>Professional network</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Email:</strong> <a href="mailto:james@westover.dev">james@westover.dev</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+15102078194">+1-510-207-8194</a></p>
+                    <p><strong>Location:</strong> Pittsburg, CA</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://resume.westover.dev">Resume</a>
+                <a href="https://github.com/neherdata">GitHub</a>
+                <a href="https://www.linkedin.com/in/jameswwestover/">LinkedIn</a>
+                <a href="mailto:james@westover.dev">Email</a>
+            </div>
+            <p>&copy; 2025 Westover Consulting. Privacy-first, home-hosted infrastructure.</p>
+        </div>
+    </footer>
+</body>
+</html>

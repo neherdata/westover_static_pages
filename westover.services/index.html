@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westover Services</title>
+    <meta name="description" content="Portal to Westover technical services and resources">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00ffff;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .service-link {
+            background: #111;
+            border: 2px solid #222;
+            border-radius: 8px;
+            padding: 2rem;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .service-link:hover {
+            border-color: #00ffff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .service-link h2 {
+            color: #00ffff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-link p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .service-link .status {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status.active {
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+        }
+
+        .status.coming-soon {
+            background: rgba(255, 255, 0, 0.1);
+            color: #ffff00;
+            border: 1px solid #ffff00;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Westover Services</h1>
+        <p class="subtitle">Technical Services & Resources</p>
+
+        <div class="services-grid">
+            <a href="https://knowledge.westover.services" class="service-link">
+                <h2>Knowledge Graph</h2>
+                <p>Explore the interconnected knowledge base</p>
+                <span class="status active">ACTIVE</span>
+            </a>
+
+            <a href="https://westover.expert" class="service-link">
+                <h2>Consulting</h2>
+                <p>AI-augmented development & infrastructure services</p>
+                <span class="status active">ACTIVE</span>
+            </a>
+
+            <a href="https://westover.xyz" class="service-link">
+                <h2>Ghost Hunter API</h2>
+                <p>Paranormal detection inference service</p>
+                <span class="status active">ACTIVE</span>
+            </a>
+
+            <a href="https://linked.skin" class="service-link">
+                <h2>NSFW Detection API</h2>
+                <p>AI-powered content detection service</p>
+                <span class="status active">ACTIVE</span>
+            </a>
+
+            <a href="https://breadfactory.app" class="service-link">
+                <h2>Breadfactory</h2>
+                <p>Strategic content platform</p>
+                <span class="status active">ACTIVE</span>
+            </a>
+
+            <a href="#" class="service-link" style="pointer-events: none; opacity: 0.6;">
+                <h2>Documentation</h2>
+                <p>Technical documentation & guides</p>
+                <span class="status coming-soon">COMING SOON</span>
+            </a>
+
+            <a href="#" class="service-link" style="pointer-events: none; opacity: 0.6;">
+                <h2>Monitoring</h2>
+                <p>System status & analytics</p>
+                <span class="status coming-soon">COMING SOON</span>
+            </a>
+
+            <a href="#" class="service-link" style="pointer-events: none; opacity: 0.6;">
+                <h2>API Registry</h2>
+                <p>Catalog of available APIs</p>
+                <span class="status coming-soon">COMING SOON</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2025 Westover | <a href="https://westover.dev">westover.dev</a></p>
+        </footer>
+    </div>
+</body>
+</html>
